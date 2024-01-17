@@ -11,8 +11,8 @@ def aprs(formatted_time, wind_direction, wind_speed, temp, humidity, pressure_mb
     aprsPass = 'PASSCODE'
 
     # APRS packet
-    btext = '@{}z4610.74N/12259.16W_{:03d}/{:03d}g{:03d}t0{}h{}b{:05.0f}KWALONGV153'.format(formatted_time, int(wind_direction), int(wind_speed), int(wind_gust), temp, humidity, pressure_mbar * 10)
-    print("@{}z4610.74N/12259.16W_{:03d}/{:03d}g{:03d}t0{}h{}b{:05.0f}KWALONGV153".format(formatted_time, int(wind_direction), int(wind_speed), int(wind_gust), temp, humidity, pressure_mbar * 10))
+    btext = '@{}z4610.74N/12259.16W_{:03d}/{:03d}g{:03d}t{:03d}h{}b{:05.0f}KWALONGV153'.format(formatted_time, int(wind_direction), int(wind_speed), int(wind_gust), int(temp), humidity, pressure_mbar * 10)
+    print("@{}z4610.74N/12259.16W_{:03d}/{:03d}g{:03d}t{:03d}h{}b{:05.0f}KWALONGV153".format(formatted_time, int(wind_direction), int(wind_speed), int(wind_gust), int(temp), humidity, pressure_mbar * 10))
 
     # create socket & connect to server
     sSock = socket(AF_INET, SOCK_STREAM)
